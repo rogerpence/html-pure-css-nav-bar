@@ -1,0 +1,63 @@
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial;
+   color: #333;
+}
+
+div.container {
+    margin-top: 4rem;
+    margin-left: 4rem;
+    width: 80%;
+}
+
+section.tabs-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* Unselected tab. */
+section.tabs-container label {
+  background: #bfbfbf;
+  color: #262626;
+  border: 1px solid #ddd;
+  padding: .7em 1em;
+  cursor: pointer;
+  z-index: 1;
+  margin-left: -1px;
+}
+
+section.tabs-container label:first-of-type {
+  margin-left: 0;
+}
+
+/* Tab content area. */
+section.tabs-container div {
+  width: 100%;
+  margin-top: -1px;
+  padding: 1em;
+  border: 1px solid #ddd;
+  -webkit-order: 1;
+  order: 1;
+}
+
+/* Hidden checkbox tracks tab state. */
+section.tabs-container input[type=radio], section.tabs-container div {
+  display: none;
+}
+
+/* Selected tab. */
+section.tabs-container input[type=radio]:checked + label {
+  background: #fff;
+  border-bottom: 1px solid #fff;
+}
+section.tabs-container input[type=radio]:checked + label + div {
+  display: block;
+}
